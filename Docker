@@ -1,0 +1,21 @@
+FROM python:3.11-slim
+
+# System deps for sentence-transformers & pdfminer
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential git wget libglib2.0-0 libgl1 && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy code and data
+COPY app /app/app
+COPY data /app/data
+
+# Env (override in deployment)
+ENV DATASET_PATH=/app/data/assessments_catalog.json
+ENV PORT=8000
+
+EXPOSE 8000
+CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
