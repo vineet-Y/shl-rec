@@ -38,7 +38,7 @@ Each dataset record represents one SHL assessment and contains the following fie
 | `test_type` | List of test categories (e.g., “Knowledge & Skills”, “Simulations”) |
 
 Example record:
-```json
+json
 {
   "name": ".NET MVVM (New)",
   "url": "https://www.shl.com/products/product-catalog/view/net-mvvm-new/",
