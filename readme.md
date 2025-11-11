@@ -94,7 +94,7 @@ Constraints (e.g., “total test time ≤ 1 hour”)
 
 Diversity (avoid near-duplicates)
 
-###Example
+### Example
 
 User Query:
 
