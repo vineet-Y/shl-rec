@@ -32,7 +32,7 @@ def recommend(inp: RecommendIn):
         for item in results:
             formatted_results.append({
                 "url": item.get("url", ""),
-                "adaptive_support": item.get("adaptive support", ""),
+                "adaptive_support": item.get("adaptive_support", ""),
                 "description": item.get("description", ""),
                 "duration": item.get("duration", ""),
                 "remote_support": item.get("remote_support", ""),
