@@ -225,7 +225,7 @@ def _format_rows(df_sel: pd.DataFrame) -> List[Dict[str, Any]]:
         rows.append({
             "url":              r.get(COL_URL, ""),
             "name":             r.get(COL_NAME, ""),
-            "adaptive support": _yn(r.get(COL_ADAPT, "")),
+            "adaptive_support": _yn(r.get(COL_ADAPT, "")),
             "description":      r.get(COL_DESC, ""),
             "duration":         str(r.get(COL_DUR, "")),
             "remote_support":   _yn(r.get(COL_REMOTE, "")),
