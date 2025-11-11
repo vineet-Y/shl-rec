@@ -27,8 +27,19 @@ def recommend(inp: RecommendIn):
     try:
         text = inp.query or fetch_text_from_url(inp.jd_url)
         results = service.recommend_v2(text)
-        # respond with only 10 items, each has at least name, url
-        # (We already include extra fields too, which is fine; the spec mandates at least these.)
-        return {"results": results}
+        # Reorder and rename keys as requested
+        formatted_results = []
+        for item in results:
+            formatted_results.append({
+                "url": item.get("url", ""),
+                "adaptive_support": item.get("adaptive support", ""),
+                "description": item.get("description", ""),
+                "duration": item.get("duration", ""),
+                "remote_support": item.get("remote_support", ""),
+                "test_type": item.get("test_type", []),
+            })
+        
+        return {"recommended_assessments": formatted_results}
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed: {e}")
