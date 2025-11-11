@@ -11,6 +11,8 @@ The system then recommends the **top 10 assessments** that best fit the job’s 
 
 ---
 
+Note: Jupyter Python file of all approaches tried to make project stored in notebooks folder.
+
 ###  Dataset Creation
 
 Our dataset was created by **crawling the official SHL website**, where each product page represents one assessment.
@@ -21,6 +23,8 @@ Our dataset was created by **crawling the official SHL website**, where each pro
 ---
 
 #### Dataset Columns
+
+The python file for data extraction available in Script Folder, with comments made for detailed explanation. 
 
 Each dataset record represents one SHL assessment and contains the following fields:
 
