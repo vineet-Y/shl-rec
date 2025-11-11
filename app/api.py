@@ -28,18 +28,8 @@ def recommend(inp: RecommendIn):
         text = inp.query or fetch_text_from_url(inp.jd_url)
         results = service.recommend_v2(text)
         # Reorder and rename keys as requested
-        formatted_results = []
-        for item in results:
-            formatted_results.append({
-                "url": item.get("url", ""),
-                "adaptive_support": item.get("adaptive_support", ""),
-                "description": item.get("description", ""),
-                "duration": item.get("duration", ""),
-                "remote_support": item.get("remote_support", ""),
-                "test_type": item.get("test_type", []),
-            })
         
-        return {"recommended_assessments": formatted_results}
+        return {"recommended_assessments": results}
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed: {e}")
