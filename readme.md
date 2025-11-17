@@ -59,7 +59,7 @@ json
 }
 
 
-### Approach
+## Approach
 
 ## Query Simplification (LLM Preprocessing)
 
@@ -73,8 +73,11 @@ We use Google Gemini (2.5 Flash) to extract structured details from the user que
 }
 
 looking_for // skills or expertise are expected from JD or the query mentions directly or indirectly
+
 intructions // instructions about time, langugae, max questions, combination of assessments etc
+
 job_level // the job level of the candidate if mentioned in JD
+
 language // the langugae the assessment in required in
 
 ## Hybrid Similarity Matching (TF-IDF + Embeddings)
