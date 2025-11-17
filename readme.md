@@ -72,6 +72,11 @@ We use Google Gemini (2.5 Flash) to extract structured details from the user que
   "language": "English"
 }
 
+looking_for // skills or expertise are expected from JD or the query mentions directly or indirectly
+intructions // instructions about time, langugae, max questions, combination of assessments etc
+job_level // the job level of the candidate if mentioned in JD
+language // the langugae the assessment in required in
+
 ## Hybrid Similarity Matching (TF-IDF + Embeddings)
 
 We combine two techniques to compute similarity between the user’s simplified query and all assessments:
@@ -80,7 +85,7 @@ SentenceTransformer embeddings for semantic similarity (all-MiniLM-L6-v2)
 
 TF-IDF for lexical (keyword-based) similarity
 
-final_score = 0.75 * emb_look + 0.10 * emb_level + 0.10 * emb_lang + 0.15 * tfidf_look
+final_score = 0.75 * emb_looking_for + 0.10 * emb_job_level + 0.10 * emb_language + 0.15 * tfidf_looking_for
 
 ## LLM Reranking for Context-Aware Selection
 
