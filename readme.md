@@ -1,5 +1,7 @@
 # 🧭 Assessment Recommendation System
 
+Note: The streamlit app is available at : http://44.214.181.171/
+
 ### 🎯 Goal
 The goal of this project is to build an **Assessment Recommender System** that suggests the most relevant **SHL assessments** based on a given **user query** or **job description (JD)**.
 
